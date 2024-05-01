@@ -8,13 +8,12 @@
 # 4. Perform any other analysis you think is appropriate.
 
 # First I'm importing all libraries that I can use to work/manipulate data files
-
 import pandas as pd 
 import numpy as np 
 import matplotlib.pyplot as plt 
 import seaborn as sns 
-import sys
-import os
+from skimpy import skim 
+
 
 # Creating a text file to write the data from running the program
 # Using 'w' parameter we make sure that if the file doesn't exist it is created. 
@@ -22,20 +21,28 @@ import os
 my_file = open("analysis.txt", "w")
 my_file.write("This file contains my analysis of the Iris dataset.\n\n")
 # my_file.close
-
-# Loading the data to the dataframe pd.
-df = pd.read_csv('iris.csv')
-
+# Loading the data to the dataframe pd and skip any lines with NAN (empty) values.
+df = pd.read_csv("iris.csv", skip_blank_lines=True)
 
 # checking if we can write info to our text file.
+# write the first 5 lines of the iris.csv to text file
 my_file.write(df.head().to_string())
 my_file.write("\n\n")
+# Write to file last 5 rows.
 my_file.write(df.tail().to_string())
+
+# Write data type 
+my_file.write("\n\nData Types in the DataSet\n\n" + df.dtypes.to_string())
+
+# Summary of DataSet.
+my_file.write("\n\nA Concise Summary of DataSet\n\n" + df.describe().to_string())
 
 # print that all went well.
 print("writing in the file was successful! ")
 
-# append if in the text file.
+
+
+
 
 
 
@@ -46,3 +53,4 @@ print("writing in the file was successful! ")
 # references:
 
 # https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html
+# https://realpython.com/python-csv/
