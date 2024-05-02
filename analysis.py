@@ -13,14 +13,23 @@ import numpy as np
 import matplotlib.pyplot as plt 
 import seaborn as sns 
 from skimpy import skim 
+from analysisfFunctions import create_empty_file
 
 
 # Creating a text file to write the data from running the program
 # Using 'w' parameter we make sure that if the file doesn't exist it is created. 
 # It will also empty the content of the file every time the program is run.
+
+# calling the function create_empty_file to create the output file analysis.txt.
+my_file = "analysis.txt"  
+create_empty_file(my_file)
+print(f"New file '{my_file}' created and cleaned.")
+
+
+'''
 my_file = open("analysis.txt", "w")
-my_file.write("This file contains my analysis of the Iris dataset.\n\n")
-# my_file.close
+my_file.write("This file contains my analysis of the Iris.\n\n")
+
 # Loading the data to the dataframe pd and skip any lines with NAN (empty) values.
 df = pd.read_csv("iris.csv", skip_blank_lines=True)
 
@@ -31,8 +40,11 @@ my_file.write("\n\n")
 # Write to file last 5 rows.
 my_file.write(df.tail().to_string())
 
+# Information about dataset.
+# my_file.write("\n\nInformation about the DataSet\n\n" + df.info(buf=f))
+
 # Write data type 
-my_file.write("\n\nData Types in the DataSet\n\n" + df.dtypes.to_string())
+my_file.write("\n\nData Types in the DataSet\n\n" + df.dtypes)
 
 # Summary of DataSet.
 my_file.write("\n\nA Concise Summary of DataSet\n\n" + df.describe().to_string())
@@ -40,15 +52,7 @@ my_file.write("\n\nA Concise Summary of DataSet\n\n" + df.describe().to_string()
 # print that all went well.
 print("writing in the file was successful! ")
 
-
-
-
-
-
-
-
-
-
+'''
 
 # references:
 
