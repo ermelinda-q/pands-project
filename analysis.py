@@ -23,10 +23,25 @@ from analysisfFunctions import create_empty_file
 # calling the function create_empty_file to create the output file analysis.txt.
 my_file = "analysis.txt"  
 create_empty_file(my_file)
-print(f"New file '{my_file}' created and cleaned.")
+print(f"Analyzing Iris DataSet.\nA file named '{my_file}' is created to store all your data.")
+
+
+df = pd.read_csv("iris.csv", skip_blank_lines=True)
+data_describe = df.describe()
+
+with open(my_file, 'a') as file:
+    file.write("\n\nColumn labels of the iris DataFrame are:\n")
+    for i, label in enumerate(df.columns):
+        file.write(f"{i+1}. {label}\n")
+        
+    file.write("\n\nSummary of the Iris dataset:\n")
+    file.write(data_describe.to_string())
+
 
 
 '''
+basic exercise code: 
+
 my_file = open("analysis.txt", "w")
 my_file.write("This file contains my analysis of the Iris.\n\n")
 
@@ -58,3 +73,4 @@ print("writing in the file was successful! ")
 
 # https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html
 # https://realpython.com/python-csv/
+# https://python-course.eu/numerical-programming/reading-and-writing-data-in-pandas.php
