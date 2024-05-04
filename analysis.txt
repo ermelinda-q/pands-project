@@ -32,7 +32,7 @@ setosa        50
 versicolor    50
 virginica     50
 
-Summary of Setosa Iris:
+Summary of Iris Setosa:
 
        sepal_length  sepal_width  petal_length  petal_width
 count      50.00000    50.000000     50.000000    50.000000
@@ -44,7 +44,7 @@ min         4.30000     2.300000      1.000000     0.100000
 75%         5.20000     3.675000      1.575000     0.300000
 max         5.80000     4.400000      1.900000     0.600000
 
-Summary of Versicolor Iris:
+Summary of Iris Versicolor:
 
        sepal_length  sepal_width  petal_length  petal_width
 count     50.000000    50.000000     50.000000    50.000000
@@ -56,7 +56,7 @@ min        4.900000     2.000000      3.000000     1.000000
 75%        6.300000     3.000000      4.600000     1.500000
 max        7.000000     3.400000      5.100000     1.800000
 
-Summary of Virginica Iris:
+Summary of Iris Virginica:
 
        sepal_length  sepal_width  petal_length  petal_width
 count      50.00000    50.000000     50.000000     50.00000

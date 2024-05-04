@@ -43,9 +43,9 @@ with open(my_file, 'a') as file:
     file.write(df_describe.to_string())
     file.write("\n\nData types in this Dataset:\n\n" + df_types.to_string())
     file.write("Main species in the dataset:\n\n" + df_species.to_string())
-    file.write("\n\nSummary of Setosa Iris:\n\n" + df_setosa.to_string())
-    file.write("\n\nSummary of Versicolor Iris:\n\n" +df_versicolor.to_string())
-    file.write("\n\nSummary of Virginica Iris:\n\n" + df_virginica.to_string())
+    file.write("\n\nSummary of Iris Setosa:\n\n" + df_setosa.to_string())
+    file.write("\n\nSummary of Iris Versicolor:\n\n" +df_versicolor.to_string())
+    file.write("\n\nSummary of Iris Virginica:\n\n" + df_virginica.to_string())
     
     
 
