@@ -12,7 +12,7 @@ import pandas as pd
 import numpy as np 
 import matplotlib.pyplot as plt 
 import seaborn as sns 
-from skimpy import skim 
+from skimpy import skim, generate_test_data
 from analysisfFunctions import create_empty_file
 
 
@@ -23,11 +23,16 @@ from analysisfFunctions import create_empty_file
 # calling the function create_empty_file to create the output file analysis.txt.
 my_file = "analysis.txt"  
 create_empty_file(my_file)
-print(f"Analyzing Iris DataSet.\nA file named '{my_file}' is created to store all your data.")
+print(f"\n\nAnalyzing Iris DataSet.\nA file named '{my_file}' is created to store all your data.\n\n")
 
 
 df = pd.read_csv("iris.csv", skip_blank_lines=True)
-data_describe = df.describe()
+df_describe = df.describe()
+df_types = df.dtypes
+df_species = df["species"].value_counts()
+df_setosa = df[df["species"] == "setosa"].describe()
+df_versicolor = df[df["species"] == "versicolor"].describe()
+df_virginica = df[df["species"] == "virginica"].describe()
 
 with open(my_file, 'a') as file:
     file.write("\n\nColumn labels of the iris DataFrame are:\n")
@@ -35,7 +40,15 @@ with open(my_file, 'a') as file:
         file.write(f"{i+1}. {label}\n")
         
     file.write("\n\nSummary of the Iris dataset:\n")
-    file.write(data_describe.to_string())
+    file.write(df_describe.to_string())
+    file.write("\n\nData types in this Dataset:\n\n" + df_types.to_string())
+    file.write("Main species in the dataset:\n\n" + df_species.to_string())
+    file.write("\n\nSummary of Setosa Iris:\n\n" + df_setosa.to_string())
+    file.write("\n\nSummary of Versicolor Iris:\n\n" +df_versicolor.to_string())
+    file.write("\n\nSummary of Virginica Iris:\n\n" + df_virginica.to_string())
+    
+    
+
 
 
 
