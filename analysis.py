@@ -27,12 +27,13 @@ print(f"\n\nAnalyzing Iris DataSet.\nA file named '{my_file}' is created to stor
 
 
 df = pd.read_csv("iris.csv", skip_blank_lines=True)
-df_describe = df.describe()
+df_describe = df.describe(include="all")
 df_types = df.dtypes
 df_species = df["species"].value_counts()
-df_setosa = df[df["species"] == "setosa"].describe()
-df_versicolor = df[df["species"] == "versicolor"].describe()
-df_virginica = df[df["species"] == "virginica"].describe()
+df_setosa = df[df["species"] == "setosa"].describe(include="all")
+df_versicolor = df[df["species"] == "versicolor"].describe(include="all")
+df_virginica = df[df["species"] == "virginica"].describe(include="all")
+
 
 with open(my_file, 'a') as file:
     file.write("\n\nColumn labels of the iris DataFrame are:\n")
@@ -46,6 +47,7 @@ with open(my_file, 'a') as file:
     file.write("\n\nSummary of Iris Setosa:\n\n" + df_setosa.to_string())
     file.write("\n\nSummary of Iris Versicolor:\n\n" +df_versicolor.to_string())
     file.write("\n\nSummary of Iris Virginica:\n\n" + df_virginica.to_string())
+    
     
     
 
@@ -87,3 +89,5 @@ print("writing in the file was successful! ")
 # https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html
 # https://realpython.com/python-csv/
 # https://python-course.eu/numerical-programming/reading-and-writing-data-in-pandas.php
+# https://geo-python.github.io/site/notebooks/L5/exploring-data-using-pandas.html
+# https://www.pluralsight.com/resources/blog/guides/scikit-machine-learning
