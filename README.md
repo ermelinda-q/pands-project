@@ -26,6 +26,46 @@ This project is a study about Iris flower data set, or Fisher's Iris data set - 
 
 ## Get Started
 
+List of possible extra commands I can use for variable's summary (analysis.txt):
+
+1. getting min, max and sum of the variables:
+    - numpy: print(big_array.min(), big_array.max(), big_array.sum()) 
+    - https://jakevdp.github.io/PythonDataScienceHandbook/02.04-computation-on-arrays-aggregates.html
+2. Sorting the array of each variable????
+    - numpy:
+    def bogosort(x):
+    while np.any(x[:-1] > x[1:]):
+        np.random.shuffle(x)
+    return x
+    x = np.array([2, 1, 4, 3, 5])
+    bogosort(x)
+    - or np.sort()
+    - https://jakevdp.github.io/PythonDataScienceHandbook/02.08-sorting.html
+3. 
+
+List of possible commands for plotting (pyplot):
+
+1. K-nearest neighbors:
+     - https://jakevdp.github.io/PythonDataScienceHandbook/02.08-sorting.html
+2. Plotting with matplot library:
+    - https://jakevdp.github.io/PythonDataScienceHandbook/04.00-introduction-to-matplotlib.html
+    - Saving figures to file:
+    fig.savefig('my_figure.png')
+    - To confirm that it contains what we think it contains, let's use the IPython Image object to display the contents of this file:
+    ' from IPython.display import Image
+    ' Image('my_figure.png')
+    https://jakevdp.github.io/PythonDataScienceHandbook/04.00-introduction-to-matplotlib.html
+    - scatter plots:
+    https://jakevdp.github.io/PythonDataScienceHandbook/04.02-simple-scatter-plots.html
+    - Histograms:
+    https://jakevdp.github.io/PythonDataScienceHandbook/04.05-histograms-and-binnings.html
+    - Seaborn:
+    https://jakevdp.github.io/PythonDataScienceHandbook/04.14-visualization-with-seaborn.html
+    - Machine Learning:
+    https://jakevdp.github.io/PythonDataScienceHandbook/05.01-what-is-machine-learning.html
+    https://jakevdp.github.io/PythonDataScienceHandbook/05.03-hyperparameters-and-model-validation.html
+    https://jakevdp.github.io/PythonDataScienceHandbook/05.06-linear-regression.html
+
 
 ## Get Help
 
