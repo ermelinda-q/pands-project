@@ -28,9 +28,6 @@ This project is a study about Iris flower data set, or Fisher's Iris data set - 
 
 List of possible extra commands I can use for variable's summary (analysis.txt):
 
-1. getting min, max and sum of the variables:
-    - numpy: print(big_array.min(), big_array.max(), big_array.sum()) 
-    - https://jakevdp.github.io/PythonDataScienceHandbook/02.04-computation-on-arrays-aggregates.html
 2. Sorting the array of each variable????
     - numpy:
     def bogosort(x):

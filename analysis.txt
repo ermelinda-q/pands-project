@@ -1,5 +1,21 @@
 This is my analysis of Iris DataSet.
 
+Iris data set is a collection of measurements taken from three species of Iris flowers: 
+a. Iris Setoza.
+b. Iris Versicolor.
+c. Iris Virginica.
+
+The dataset is widely used in the field of data science, making it an excellent resource for teaching and learning.
+Each species studied in the dataset has 50 samples, and four measurements:
+a. sepal length.
+b. sepal width.
+c. petal length.
+d. petal width.
+
+The aim of this program is to show what information we can get from the dataset using Python programming language and its libraries.
+
+
+
 Column labels of the iris DataFrame are:
 1. sepal_length
 2. sepal_width
@@ -8,7 +24,23 @@ Column labels of the iris DataFrame are:
 5. species
 
 
+Data types in this Dataset:
+
+sepal_length    float64
+sepal_width     float64
+petal_length    float64
+petal_width     float64
+species          object
+
+Main species in the dataset:
+
+species
+setosa        50
+versicolor    50
+virginica     50
+
 Summary of the Iris dataset:
+
         sepal_length  sepal_width  petal_length  petal_width species
 count     150.000000   150.000000    150.000000   150.000000     150
 unique           NaN          NaN           NaN          NaN       3
@@ -22,18 +54,12 @@ min         4.300000     2.000000      1.000000     0.100000     NaN
 75%         6.400000     3.300000      5.100000     1.800000     NaN
 max         7.900000     4.400000      6.900000     2.500000     NaN
 
-Data types in this Dataset:
+The next section show the mean values of each variable in the dataset for each species.
 
-sepal_length    float64
-sepal_width     float64
-petal_length    float64
-petal_width     float64
-species          objectMain species in the dataset:
 
-species
-setosa        50
-versicolor    50
-virginica     50
+Comparing Sepal length mean/average values of each species:
+
+Iris Setosa: 5.006 	Iris Versicolor: 5.936 	Iris Virginica: 6.588
 
 Summary of Iris Setosa:
 

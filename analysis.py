@@ -7,6 +7,8 @@
 # 3. Output a scatter plot of each pair of variables.
 # 4. Perform any other analysis you think is appropriate.
 
+# Author: Ermelinda Qejvani
+
 # First I'm importing all libraries that I can use to work/manipulate data files
 import pandas as pd 
 import numpy as np 
@@ -15,7 +17,9 @@ import seaborn as sns
 from skimpy import skim, generate_test_data
 from analysisfFunctions import create_empty_file
 
-
+#########################################################################
+###############        Working with the text file         ###############
+#########################################################################
 # Creating a text file to write the data from running the program
 # Using 'w' parameter we make sure that if the file doesn't exist it is created. 
 # It will also empty the content of the file every time the program is run.
@@ -23,30 +27,41 @@ from analysisfFunctions import create_empty_file
 # calling the function create_empty_file to create the output file analysis.txt.
 my_file = "analysis.txt"  
 create_empty_file(my_file)
-print(f"\n\nAnalyzing Iris DataSet.\nA file named '{my_file}' is created to store all your data.\n\n")
+print(f"\nAnalyzing Iris DataSet.\nA file named '{my_file}' is created to store all analysis data.\n")
 
 
 df = pd.read_csv("iris.csv", skip_blank_lines=True)
 df_describe = df.describe(include="all")
 df_types = df.dtypes
 df_species = df["species"].value_counts()
-df_setosa = df[df["species"] == "setosa"].describe(include="all")
-df_versicolor = df[df["species"] == "versicolor"].describe(include="all")
-df_virginica = df[df["species"] == "virginica"].describe(include="all")
+df_setosa = df[df["species"] == "setosa"]
+df_versicolor = df[df["species"] == "versicolor"]
+df_virginica = df[df["species"] == "virginica"]
+
+setosa_sepal_mean = round(df_setosa["sepal_length"].mean(), 3)
+versicolor_sepal_mean = round(df_versicolor["sepal_length"].mean(), 3)
+virginica_sepal_mean = round(df_virginica["sepal_length"].mean(), 3)
+
 
 
 with open(my_file, 'a') as file:
     file.write("\n\nColumn labels of the iris DataFrame are:\n")
     for i, label in enumerate(df.columns):
         file.write(f"{i+1}. {label}\n")
-        
-    file.write("\n\nSummary of the Iris dataset:\n")
+    
+    file.write("\n\nData types in this Dataset:\n\n" + df_types.to_string()) 
+    file.write("\n\nMain species in the dataset:\n\n" + df_species.to_string())  
+    file.write("\n\nSummary of the Iris dataset:\n\n")
     file.write(df_describe.to_string())
-    file.write("\n\nData types in this Dataset:\n\n" + df_types.to_string())
-    file.write("Main species in the dataset:\n\n" + df_species.to_string())
-    file.write("\n\nSummary of Iris Setosa:\n\n" + df_setosa.to_string())
-    file.write("\n\nSummary of Iris Versicolor:\n\n" +df_versicolor.to_string())
-    file.write("\n\nSummary of Iris Virginica:\n\n" + df_virginica.to_string())
+    file.write("\n\nThe next section show the mean values of each variable in the dataset for each species.\n")
+    file.write("\n\nComparing Sepal length mean/average values of each species:\n\n")
+    file.write(f"Iris Setosa: {setosa_sepal_mean} \tIris Versicolor: {versicolor_sepal_mean} \tIris Virginica: {virginica_sepal_mean}")
+
+    
+    
+    file.write("\n\nSummary of Iris Setosa:\n\n" + df_setosa.describe(include="all").to_string())
+    file.write("\n\nSummary of Iris Versicolor:\n\n" +df_versicolor.describe(include="all").to_string())
+    file.write("\n\nSummary of Iris Virginica:\n\n" + df_virginica.describe(include="all").to_string())
     
     
     
