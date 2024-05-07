@@ -38,9 +38,21 @@ df_setosa = df[df["species"] == "setosa"]
 df_versicolor = df[df["species"] == "versicolor"]
 df_virginica = df[df["species"] == "virginica"]
 
-setosa_sepal_mean = round(df_setosa["sepal_length"].mean(), 3)
-versicolor_sepal_mean = round(df_versicolor["sepal_length"].mean(), 3)
-virginica_sepal_mean = round(df_virginica["sepal_length"].mean(), 3)
+set_sepal_length_mean = round(df_setosa["sepal_length"].mean(), 3)
+set_sepal_width_mean = round(df_setosa["sepal_width"].mean(), 3)
+set_petal_length_mean = round(df_setosa["petal_length"].mean(), 3)
+set_petal_width_mean = round(df_setosa["petal_width"].mean(), 3)
+
+ver_sepal_length_mean = round(df_versicolor["sepal_length"].mean(), 3)
+ver_sepal_width_mean = round(df_versicolor["sepal_width"].mean(), 3)
+ver_petal_length_mean = round(df_versicolor["petal_length"].mean(), 3)
+ver_petal_width_mean = round(df_versicolor["petal_width"])
+
+virg_sepal_length_mean = round(df_virginica["sepal_length"].mean(), 3)
+virg_sepal_width_mean = round(df_virginica["sepal_width"].mean(), 3)
+virg_petal_length_mean = round(df_virginica["petal_length"].mean(), 3)
+virg_petal_width_mean = round(df_virginica["petal_width"].mean(), 3)
+
 
 
 
@@ -53,10 +65,14 @@ with open(my_file, 'a') as file:
     file.write("\n\nMain species in the dataset:\n\n" + df_species.to_string())  
     file.write("\n\nSummary of the Iris dataset:\n\n")
     file.write(df_describe.to_string())
-    file.write("\n\nThe next section show the mean values of each variable in the dataset for each species.\n")
-    file.write("\n\nComparing Sepal length mean/average values of each species:\n\n")
-    file.write(f"Iris Setosa: {setosa_sepal_mean} \tIris Versicolor: {versicolor_sepal_mean} \tIris Virginica: {virginica_sepal_mean}")
-
+    file.write("\n\nThe next section shows the mean values of each variable in the dataset for each species.\n")
+    
+    file.write("\nComparing Sepal Length:\n")
+    file.write(f"Iris Setosa: {set_sepal_length_mean} \t\tIris Versicolor: {ver_sepal_length_mean} \t\tIris Virginica: {virg_sepal_length_mean}")
+    file.write(f"\nComparing Sepal Width:\nIris Setosa: {set_sepal_width_mean} \t\tIris Versicolor: {ver_sepal_width_mean} \t\tIris Virginica: {virg_sepal_width_mean}")
+    file.write(f"\nComparing Petal Length:\nIris Setosa: {set_petal_length_mean} \t\tIris Versicolor: {ver_petal_length_mean} \t\tIris Virginica: {virg_petal_length_mean}")
+    # petal length virginica not working... check again
+    # file.write(f"\nComparing Petal Width:\nIris Setosa: {set_petal_width_mean} \t\tIris Versicolor: {ver_petal_width_mean} \t\tIris Virginica: {virg_petal_width_mean}")
     
     
     file.write("\n\nSummary of Iris Setosa:\n\n" + df_setosa.describe(include="all").to_string())
