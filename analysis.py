@@ -86,41 +86,80 @@ with open(my_file, 'a') as file:
 
 fig, axes = plt.subplots(2, 2)
 sns.histplot(data=df, x="sepal_length", hue="species", ax=axes[0,0]).set_title("Sepal Length")
-sns.histplot(data=df, x="sepal_width", hue="species", ax=axes[0,1]).set_title("Sepal Depth")
+sns.histplot(data=df, x="sepal_width", hue="species", ax=axes[0,1]).set_title("Sepal Width")
 sns.histplot(data=df, x="petal_length", hue="species", ax=axes[1,0]).set_title("Petal Length")
 sns.histplot(data=df, x="petal_width", hue="species", ax=axes[1,1]).set_title("Petal Width")
 
 plt.show()
 
-'''
-basic exercise code: 
 
-my_file = open("analysis.txt", "w")
-my_file.write("This file contains my analysis of the Iris.\n\n")
+##############################################################
+##############      Pairplot      ############################
+##############################################################
 
-# Loading the data to the dataframe pd and skip any lines with NAN (empty) values.
-df = pd.read_csv("iris.csv", skip_blank_lines=True)
+# Relationship of our variables on the dataset.
+sns.pairplot(df, hue='species', height=1.5)
+plt.suptitle("Relationship between Iris dataset variables", fontsize=10)
+plt.savefig("DatasetVariables.png")
+plt.close()
 
-# checking if we can write info to our text file.
-# write the first 5 lines of the iris.csv to text file
-my_file.write(df.head().to_string())
-my_file.write("\n\n")
-# Write to file last 5 rows.
-my_file.write(df.tail().to_string())
+# Relationship of variables in Iris Setosa.
+sns.pairplot(df_setosa, height=1.5)
+plt.suptitle("Iris Setosa variables")
+plt.savefig("IrisSetosaVariables.png")
+plt.close()
 
-# Information about dataset.
-# my_file.write("\n\nInformation about the DataSet\n\n" + df.info(buf=f))
+# Relationship of variables in Iris Versicolor.
+sns.pairplot(df_versicolor, height=1.5)
+plt.suptitle("Iris Versicolor variables")
+plt.savefig("IrisVersicolorVariables.png")
+plt.close()
 
-# Write data type 
-my_file.write("\n\nData Types in the DataSet\n\n" + df.dtypes)
+# Relationship of variables in Iris Virginica.
+sns.pairplot(df_virginica, height=1.5)
+plt.suptitle("Iris Virginica variables")
+plt.savefig("IrisVirginicaVariables.png")
+plt.close()
 
-# Summary of DataSet.
-my_file.write("\n\nA Concise Summary of DataSet\n\n" + df.describe().to_string())
 
-# print that all went well.
-print("writing in the file was successful! ")
+# Relationship of petal_length and petal_width, all three species.
 
-'''
+fig, ax = plt.subplots()
+fig.set_size_inches(10, 5) # adjusting the length and width of plot
+
+# lables and scatter points
+ax.scatter(df_setosa['petal_length'], df_setosa['petal_width'], label="Setosa", facecolor="blue")
+ax.scatter(df_versicolor['petal_length'], df_versicolor['petal_width'], label="Versicolor", facecolor="green")
+ax.scatter(df_virginica['petal_length'], df_virginica['petal_width'], label="Virginica", facecolor="red")
+
+
+ax.set_xlabel("petal length")
+ax.set_ylabel("petal width")
+ax.grid()
+ax.set_title("Iris petals")
+ax.legend()
+plt.savefig("IrisPetals.png")
+plt.close()
+
+# Relationship between sepal_length and sepal_width of three species.
+
+fig, ax = plt.subplots()
+fig.set_size_inches(10, 5) # adjusting the length and width of plot
+
+# lables and scatter points
+ax.scatter(df_setosa['sepal_length'], df_setosa['sepal_width'], label="Setosa", facecolor="blue")
+ax.scatter(df_versicolor['sepal_length'], df_versicolor['sepal_width'], label="Versicolor", facecolor="green")
+ax.scatter(df_virginica['sepal_length'], df_virginica['sepal_width'], label="Virginica", facecolor="red")
+
+
+ax.set_xlabel("Sepal length")
+ax.set_ylabel("Sepal width")
+ax.grid()
+ax.set_title("Iris Sepals")
+ax.legend()
+plt.savefig("Iris Sepals")
+plt.close()
+
 
 # references:
 
