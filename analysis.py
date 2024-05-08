@@ -76,11 +76,21 @@ with open(my_file, 'a') as file:
     file.write("\n\nSummary of Iris Versicolor:\n\n" +df_versicolor.describe(include="all").to_string())
     file.write("\n\nSummary of Iris Virginica:\n\n" + df_virginica.describe(include="all").to_string())
     
-    
-    
 
 
+########################################################
+###############        Histograms        ###############
+######################################################## 
 
+# Histogram of all 4 variables comparing by species
+
+fig, axes = plt.subplots(2, 2)
+sns.histplot(data=df, x="sepal_length", hue="species", ax=axes[0,0]).set_title("Sepal Length")
+sns.histplot(data=df, x="sepal_width", hue="species", ax=axes[0,1]).set_title("Sepal Depth")
+sns.histplot(data=df, x="petal_length", hue="species", ax=axes[1,0]).set_title("Petal Length")
+sns.histplot(data=df, x="petal_width", hue="species", ax=axes[1,1]).set_title("Petal Width")
+
+plt.show()
 
 '''
 basic exercise code: 
