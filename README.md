@@ -27,6 +27,7 @@ This project is a study about Iris flower data set, or Fisher's Iris data set - 
 ## Get Started
 
 List of possible extra commands I can use for variable's summary (analysis.txt):
+1. Adding a menu.
 
 2. Sorting the array of each variable????
     - numpy:
@@ -38,7 +39,6 @@ List of possible extra commands I can use for variable's summary (analysis.txt):
     bogosort(x)
     - or np.sort()
     - https://jakevdp.github.io/PythonDataScienceHandbook/02.08-sorting.html
-3. 
 
 List of possible commands for plotting (pyplot):
 
@@ -62,7 +62,7 @@ List of possible commands for plotting (pyplot):
     https://jakevdp.github.io/PythonDataScienceHandbook/05.01-what-is-machine-learning.html
     https://jakevdp.github.io/PythonDataScienceHandbook/05.03-hyperparameters-and-model-validation.html
     https://jakevdp.github.io/PythonDataScienceHandbook/05.06-linear-regression.html
-
+3. Save all .png files to a .pdf file????
 
 ## Get Help
 
