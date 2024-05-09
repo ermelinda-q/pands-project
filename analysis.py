@@ -15,7 +15,9 @@ import numpy as np
 import matplotlib.pyplot as plt 
 import seaborn as sns 
 from skimpy import skim, generate_test_data
-from analysisfFunctions import create_empty_file
+from analysisFunctions import *
+import warnings
+warnings.filterwarnings("ignore", message="The figure layout has changed to tight")
 
 #########################################################################
 ###############        Working with the text file         ###############
@@ -38,26 +40,8 @@ df_setosa = df[df["species"] == "setosa"]
 df_versicolor = df[df["species"] == "versicolor"]
 df_virginica = df[df["species"] == "virginica"]
 
-# variables to use for graphs by species
 
-set_sepal_length_mean = round(df_setosa["sepal_length"].mean(), 3)
-set_sepal_width_mean = round(df_setosa["sepal_width"].mean(), 3)
-set_petal_length_mean = round(df_setosa["petal_length"].mean(), 3)
-set_petal_width_mean = round(df_setosa["petal_width"].mean(), 3)
-
-ver_sepal_length_mean = round(df_versicolor["sepal_length"].mean(), 3)
-ver_sepal_width_mean = round(df_versicolor["sepal_width"].mean(), 3)
-ver_petal_length_mean = round(df_versicolor["petal_length"].mean(), 3)
-ver_petal_width_mean = round(df_versicolor["petal_width"])
-
-virg_sepal_length_mean = round(df_virginica["sepal_length"].mean(), 3)
-virg_sepal_width_mean = round(df_virginica["sepal_width"].mean(), 3)
-virg_petal_length_mean = round(df_virginica["petal_length"].mean(), 3)
-virg_petal_width_mean = round(df_virginica["petal_width"].mean(), 3)
-
-
-
-
+# Generating info from the dataset and writing in our file: analysis.txt
 with open(my_file, 'a') as file:
     file.write("\n\nColumn labels of the iris DataFrame are:\n")
     for i, label in enumerate(df.columns):
@@ -103,23 +87,10 @@ plt.suptitle("Relationship between Iris dataset variables", fontsize=10)
 plt.savefig("./IrisGraphs/DatasetVariables.png")
 plt.close()
 
-# Relationship of variables in Iris Setosa.
-sns.pairplot(df_setosa, height=1.5)
-plt.suptitle("Iris Setosa variables")
-plt.savefig("./IrisGraphs/IrisSetosaVariables.png")
-plt.close()
-
-# Relationship of variables in Iris Versicolor.
-sns.pairplot(df_versicolor, height=1.5)
-plt.suptitle("Iris Versicolor variables")
-plt.savefig("./IrisGraphs/IrisVersicolorVariables.png")
-plt.close()
-
-# Relationship of variables in Iris Virginica.
-sns.pairplot(df_virginica, height=1.5)
-plt.suptitle("Iris Virginica variables")
-plt.savefig("./IrisGraphs/IrisVirginicaVariables.png")
-plt.close()
+# Calling species_pairplot_to_file function from analysisFunctions file
+species_pairplot_to_file(df_setosa, "Setosa")               # Relationship of variables in Iris Setosa.
+species_pairplot_to_file(df_versicolor, "Versicolor")       # Relationship of variables in Iris Versicolor.
+species_pairplot_to_file(df_virginica, "Virginica")         # Relationship of variables in Iris Virginica.
 
 
 # Relationship of petal_length and petal_width, all three species.
@@ -168,3 +139,21 @@ plt.close()
 # https://python-course.eu/numerical-programming/reading-and-writing-data-in-pandas.php
 # https://geo-python.github.io/site/notebooks/L5/exploring-data-using-pandas.html
 # https://www.pluralsight.com/resources/blog/guides/scikit-machine-learning
+
+# variables to use for graphs by species maybe later?????
+'''
+set_sepal_length_mean = round(df_setosa["sepal_length"].mean(), 3)
+set_sepal_width_mean = round(df_setosa["sepal_width"].mean(), 3)
+set_petal_length_mean = round(df_setosa["petal_length"].mean(), 3)
+set_petal_width_mean = round(df_setosa["petal_width"].mean(), 3)
+
+ver_sepal_length_mean = round(df_versicolor["sepal_length"].mean(), 3)
+ver_sepal_width_mean = round(df_versicolor["sepal_width"].mean(), 3)
+ver_petal_length_mean = round(df_versicolor["petal_length"].mean(), 3)
+ver_petal_width_mean = round(df_versicolor["petal_width"])
+
+virg_sepal_length_mean = round(df_virginica["sepal_length"].mean(), 3)
+virg_sepal_width_mean = round(df_virginica["sepal_width"].mean(), 3)
+virg_petal_length_mean = round(df_virginica["petal_length"].mean(), 3)
+virg_petal_width_mean = round(df_virginica["petal_width"].mean(), 3)
+'''
