@@ -90,7 +90,7 @@ sns.histplot(data=df, x="sepal_width", hue="species", ax=axes[0,1]).set_title("S
 sns.histplot(data=df, x="petal_length", hue="species", ax=axes[1,0]).set_title("Petal Length")
 sns.histplot(data=df, x="petal_width", hue="species", ax=axes[1,1]).set_title("Petal Width")
 
-plt.show()
+plt.savefig("./IrisGraphs/VariablesHistogram.png")
 
 
 ##############################################################
@@ -100,25 +100,25 @@ plt.show()
 # Relationship of our variables on the dataset.
 sns.pairplot(df, hue='species', height=1.5)
 plt.suptitle("Relationship between Iris dataset variables", fontsize=10)
-plt.savefig("DatasetVariables.png")
+plt.savefig("./IrisGraphs/DatasetVariables.png")
 plt.close()
 
 # Relationship of variables in Iris Setosa.
 sns.pairplot(df_setosa, height=1.5)
 plt.suptitle("Iris Setosa variables")
-plt.savefig("IrisSetosaVariables.png")
+plt.savefig("./IrisGraphs/IrisSetosaVariables.png")
 plt.close()
 
 # Relationship of variables in Iris Versicolor.
 sns.pairplot(df_versicolor, height=1.5)
 plt.suptitle("Iris Versicolor variables")
-plt.savefig("IrisVersicolorVariables.png")
+plt.savefig("./IrisGraphs/IrisVersicolorVariables.png")
 plt.close()
 
 # Relationship of variables in Iris Virginica.
 sns.pairplot(df_virginica, height=1.5)
 plt.suptitle("Iris Virginica variables")
-plt.savefig("IrisVirginicaVariables.png")
+plt.savefig("./IrisGraphs/IrisVirginicaVariables.png")
 plt.close()
 
 
@@ -138,7 +138,7 @@ ax.set_ylabel("petal width")
 ax.grid()
 ax.set_title("Iris petals")
 ax.legend()
-plt.savefig("IrisPetals.png")
+plt.savefig("./IrisGraphs/IrisPetals.png")
 plt.close()
 
 # Relationship between sepal_length and sepal_width of three species.
@@ -157,7 +157,7 @@ ax.set_ylabel("Sepal width")
 ax.grid()
 ax.set_title("Iris Sepals")
 ax.legend()
-plt.savefig("Iris Sepals")
+plt.savefig("./IrisGraphs/Iris Sepals")
 plt.close()
 
 
