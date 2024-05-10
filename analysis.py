@@ -14,7 +14,6 @@ import pandas as pd
 import numpy as np 
 import matplotlib.pyplot as plt 
 import seaborn as sns 
-from skimpy import skim, generate_test_data
 from analysisFunctions import *
 import warnings
 warnings.filterwarnings("ignore", message="The figure layout has changed to tight")
@@ -31,7 +30,7 @@ my_file = "analysis.txt"
 create_empty_file(my_file)
 print(f"\nAnalyzing Iris DataSet.\nA file named '{my_file}' is created to store all analysis data.\n")
 
-
+# Storing dataset into DataFrame (df). Defining variables to use in the program.
 df = pd.read_csv("iris.csv", skip_blank_lines=True)
 df_describe = df.describe(include="all")
 df_types = df.dtypes
@@ -43,16 +42,19 @@ df_virginica = df[df["species"] == "virginica"]
 
 # Generating info from the dataset and writing in our file: analysis.txt
 with open(my_file, 'a') as file:
-    file.write("\n\nColumn labels of the iris DataFrame are:\n")
+    file.write("\nUsing command 'df.columns' we can get the Column labels of the DataSet which are:\n")
     for i, label in enumerate(df.columns):
         file.write(f"{i+1}. {label}\n")
     
-    file.write("\n\nData types in this Dataset:\n\n" + df_types.to_string()) 
-    file.write("\n\nMain species in the dataset:\n\n" + df_species.to_string())  
-    file.write("\n\nSummary of the Iris dataset:\n\n")
+    file.write("\n\nFinding out data types in the Dataset using 'df.dtypes' command:\n" + df_types.to_string()) 
+    file.write("\n\nMain species in the dataset using 'df['species'].value_count' command:\n\n" + df_species.to_string())  
+    file.write("\n\nSummary of the Iris dataset using 'df.describe()' command:\n\n")
     file.write(df_describe.to_string())
+    file.write("\nPlease note that 'df.describe()' command gives us information about the whole dataset."
+               "\nTo get a more accurate information about the different flower species I am created subsets for each flower.\n")
     
-    file.write("\n\nThe next section shows the mean values of each variable in the dataset for each species.\n")
+    file.write("\n\nThe next section shows the mean values of each variable in the dataset for each species.\n"
+               "\nI am using 'df.groupby('species')' command:\n")
     file.write((df.groupby("species").mean()).to_string())
     
     
