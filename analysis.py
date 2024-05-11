@@ -29,7 +29,7 @@ warnings.filterwarnings("ignore", message="The figure layout has changed to tigh
 # calling the function create_empty_file to create the output file analysis.txt.
 my_file = "analysis.txt"  
 create_empty_file(my_file)
-print(f"\nAnalyzing Iris DataSet.\nA file named '{my_file}' is created to store all analysis data.\n")
+print(f"Analyzing Iris DataSet.\nOpen '{my_file}' to read a detailed information of the DataSet.")
 
 # Storing dataset into DataFrame (df). Defining variables to use in the program.
 df = pd.read_csv("iris.csv", skip_blank_lines=True)
@@ -86,7 +86,7 @@ sns.histplot(data=df, x="petal_length", hue="species", ax=axes[1,0]).set_title("
 sns.histplot(data=df, x="petal_width", hue="species", ax=axes[1,1]).set_title("Petal Width")
 
 plt.savefig("./IrisGraphs/VariablesHistogram.png")
-
+print("Histogram of Iris DataSet successfully saved in ./IrisGraphs/ directory.")
 
 #################################################################################
 ####################               Pairplot                 #####################
