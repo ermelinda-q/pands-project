@@ -18,9 +18,10 @@ from analysisFunctions import *
 import warnings
 warnings.filterwarnings("ignore", message="The figure layout has changed to tight")
 
-#########################################################################
-###############        Working with the text file         ###############
-#########################################################################
+################################################################################
+####################        Working with the text file      ####################
+################################################################################
+
 # Creating a text file to write the data from running the program
 # Using 'w' parameter we make sure that if the file doesn't exist it is created. 
 # It will also empty the content of the file every time the program is run.
@@ -35,42 +36,50 @@ df = pd.read_csv("iris.csv", skip_blank_lines=True)
 df_describe = df.describe(include="all")
 df_types = df.dtypes
 df_species = df["species"].value_counts()
-df_setosa = df[df["species"] == "setosa"]
+
+# Creating subset for each dataset by species.
+df_setosa = df[df["species"] == "setosa"]           
 df_versicolor = df[df["species"] == "versicolor"]
 df_virginica = df[df["species"] == "virginica"]
 
 
 # Generating info from the dataset and writing in our file: analysis.txt
 with open(my_file, 'a') as file:
-    file.write("\nUsing command 'df.columns' we can get the Column labels of the DataSet which are:\n")
+    file.write("\nUsing command 'df.columns' we can get the Column labels of the DataSet which are:\n"
+               "---------------------------------------------------------------------------------\n")
     for i, label in enumerate(df.columns):
         file.write(f"{i+1}. {label}\n")
     
-    file.write("\n\nFinding out data types in the Dataset using 'df.dtypes' command:\n" + df_types.to_string()) 
-    file.write("\n\nMain species in the dataset using 'df['species'].value_count' command:\n\n" + df_species.to_string())  
-    file.write("\n\nSummary of the Iris dataset using 'df.describe()' command:\n\n")
+    file.write("\n\nFinding out data types in the Dataset using 'df.dtypes' command:\n"
+               "----------------------------------------------------------------\n" + df_types.to_string()) 
+    file.write("\n\nMain species in the dataset using 'df['species'].value_count' command:\n"
+               "----------------------------------------------------------------------\n"+ df_species.to_string())  
+    file.write("\n\nSummary of the Iris dataset using 'df.describe()' command:\n"
+               "----------------------------------------------------------\n")
     file.write(df_describe.to_string())
-    file.write("\nPlease note that 'df.describe()' command gives us information about the whole dataset."
-               "\nTo get a more accurate information about the different flower species I am created subsets for each flower.\n")
-    
+    file.write("\n\nPlease note that 'df.describe()' command gives us information about the whole dataset."
+               "\nTo get a more accurate information about the different flower species I created subsets for each flower.\n") 
     file.write("\n\nThe next section shows the mean values of each variable in the dataset for each species.\n"
-               "\nI am using 'df.groupby('species')' command:\n")
+               "----------------------------------------------------------------------------------------"
+               "\nI am using 'df.groupby('species')' command:\n"
+               "-------------------------------------------\n")
     file.write((df.groupby("species").mean()).to_string())
     
-    
-    file.write("\n\nSummary of Iris Setosa:\n\n" + df_setosa.describe(include="all").to_string())
-    file.write("\n\nSummary of Iris Versicolor:\n\n" +df_versicolor.describe(include="all").to_string())
-    file.write("\n\nSummary of Iris Virginica:\n\n" + df_virginica.describe(include="all").to_string())
+    file.write("\n\nIn the next section I will use 'df_specie.describe()' command to get information about each of species.\n"
+               "*******************************************************************************************************\n")
+    file.write("\nSummary of Iris Setosa:\n-----------------------\n" + df_setosa.describe(include="all").to_string())
+    file.write("\n\nSummary of Iris Versicolor:\n---------------------------\n" +df_versicolor.describe(include="all").to_string())
+    file.write("\n\nSummary of Iris Virginica:\n--------------------------\n" + df_virginica.describe(include="all").to_string())
     
 
 
-########################################################
-###############        Histograms        ###############
-######################################################## 
+################################################################################
+####################               Histograms               ####################
+################################################################################
 
 # Histogram of all 4 variables comparing by species
 
-fig, axes = plt.subplots(2, 2)
+fig, axes = plt.subplots(2, 2, figsize=(12, 12))
 sns.histplot(data=df, x="sepal_length", hue="species", ax=axes[0,0]).set_title("Sepal Length")
 sns.histplot(data=df, x="sepal_width", hue="species", ax=axes[0,1]).set_title("Sepal Width")
 sns.histplot(data=df, x="petal_length", hue="species", ax=axes[1,0]).set_title("Petal Length")
@@ -79,9 +88,9 @@ sns.histplot(data=df, x="petal_width", hue="species", ax=axes[1,1]).set_title("P
 plt.savefig("./IrisGraphs/VariablesHistogram.png")
 
 
-##############################################################
-##############      Pairplot      ############################
-##############################################################
+#################################################################################
+####################               Pairplot                 #####################
+#################################################################################
 
 # Relationship of our variables on the dataset.
 sns.pairplot(df, hue='species', height=1.5)
@@ -142,6 +151,8 @@ plt.close()
 # https://geo-python.github.io/site/notebooks/L5/exploring-data-using-pandas.html
 # https://www.pluralsight.com/resources/blog/guides/scikit-machine-learning
 
+
+# https://www.freecodecamp.org/news/convert-multiple-images-into-a-single-pdf-file-with-python/
 # variables to use for graphs by species maybe later?????
 '''
 set_sepal_length_mean = round(df_setosa["sepal_length"].mean(), 3)
