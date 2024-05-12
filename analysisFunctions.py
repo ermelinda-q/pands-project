@@ -1,6 +1,7 @@
 # This file contains functions for main file analysis.txt
 import seaborn as sns 
 import matplotlib.pyplot as plt 
+import numpy as np 
 
 def create_empty_file(my_file):
     # Open the file in 'write' mode ('w'). If the file doesn't exist, it will be created.
@@ -14,7 +15,7 @@ def create_empty_file(my_file):
                    "\nEach species studied in the dataset has 50 samples, and four measurements:\na. sepal length.\nb. sepal width.\nc. petal length.\nd. petal width.\n"
                    "\nThe aim of this program is to show what information we can get from the dataset using Python programming language and its libraries."
                    "\n************************************************************************************************************************************\n") 
-        print("File analysis.txt successfully created.")
+        print(f"File '{my_file}' successfully created.")
     except Exception as e:
         print("Error saving information to file:", str(e))
 
@@ -30,6 +31,8 @@ def species_pairplot_to_file(df, species_name, save_dir="./IrisGraphs/"):
         print(f"Iris {species_name} pairplot successfully saved in {save_dir} directory.")
     except Exception as e:
         print("Error generating pairplot:", str(e))
+        
+
 
 
 
