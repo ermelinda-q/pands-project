@@ -83,6 +83,68 @@ def save_iris_pairplot(df, save_dir="./IrisGraphs/", filename="PairPlotOfVariabl
 
 
 
+##########################################################
+
+def iris_petals(df):
+    try:
+        # Creating subset for each dataset by species.
+        df_setosa = df[df["species"] == "setosa"]           
+        df_versicolor = df[df["species"] == "versicolor"]
+        df_virginica = df[df["species"] == "virginica"]
+        fig, ax = plt.subplots()
+        fig.set_size_inches(10, 5) # adjusting the length and width of plot
+
+        # lables and scatter points
+        ax.scatter(df_setosa['petal_length'], df_setosa['petal_width'], label="Setosa", facecolor="blue")
+        ax.scatter(df_versicolor['petal_length'], df_versicolor['petal_width'], label="Versicolor", facecolor="green")
+        ax.scatter(df_virginica['petal_length'], df_virginica['petal_width'], label="Virginica", facecolor="red")
 
 
+        ax.set_xlabel("petal length")
+        ax.set_ylabel("petal width")
+        ax.grid()
+        ax.set_title("Iris petals")
+        ax.legend()
+        plt.savefig("./IrisGraphs/IrisPetals.png")
+        plt.close()
+        print("Pairplot of Iris DataSet Petal variables saved in ./IrisGraphs/ directory.")
+    except Exception as e:
+        print(f"An error occurred while creating or saving the scatter plots: {e}")
 
+
+def save_iris_scatterplot(df, x_var, y_var, plot_title, save_dir="./IrisGraphs/", filename="IrisScatterPlot.png"):
+    try:
+        # Ensure the save directory exists
+        os.makedirs(save_dir, exist_ok=True)
+
+        # Separate the dataframe by species
+        df_setosa = df[df['species'] == 'setosa']
+        df_versicolor = df[df['species'] == 'versicolor']
+        df_virginica = df[df['species'] == 'virginica']
+
+        # Create the scatter plot
+        fig, ax = plt.subplots()
+        fig.set_size_inches(10, 5)  # Adjusting the length and width of the plot
+
+        # Plot scatter points
+        ax.scatter(df_setosa[x_var], df_setosa[y_var], label="Setosa", facecolor="blue")
+        ax.scatter(df_versicolor[x_var], df_versicolor[y_var], label="Versicolor", facecolor="green")
+        ax.scatter(df_virginica[x_var], df_virginica[y_var], label="Virginica", facecolor="red")
+
+        # Set labels and title
+        ax.set_xlabel(x_var.replace('_', ' ').title())
+        ax.set_ylabel(y_var.replace('_', ' ').title())
+        ax.grid()
+        ax.set_title(plot_title)
+        ax.legend()
+
+        # Save the plot to the specified directory
+        filepath = os.path.join(save_dir, filename)
+        plt.savefig(filepath)
+
+        # Close the plot to free up memory
+        plt.close()
+
+        print(f"Scatter plot of {x_var} vs {y_var} for Iris species successfully saved in {filepath}")
+    except Exception as e:
+        print(f"An error occurred while creating or saving the scatter plot: {e}")

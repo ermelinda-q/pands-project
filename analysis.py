@@ -179,19 +179,3 @@ print("Correlation heatmap saved in ./IrisGraphs/ directory")
 
 # https://www.freecodecamp.org/news/convert-multiple-images-into-a-single-pdf-file-with-python/
 # variables to use for graphs by species maybe later?????
-'''
-set_sepal_length_mean = round(df_setosa["sepal_length"].mean(), 3)
-set_sepal_width_mean = round(df_setosa["sepal_width"].mean(), 3)
-set_petal_length_mean = round(df_setosa["petal_length"].mean(), 3)
-set_petal_width_mean = round(df_setosa["petal_width"].mean(), 3)
-
-ver_sepal_length_mean = round(df_versicolor["sepal_length"].mean(), 3)
-ver_sepal_width_mean = round(df_versicolor["sepal_width"].mean(), 3)
-ver_petal_length_mean = round(df_versicolor["petal_length"].mean(), 3)
-ver_petal_width_mean = round(df_versicolor["petal_width"])
-
-virg_sepal_length_mean = round(df_virginica["sepal_length"].mean(), 3)
-virg_sepal_width_mean = round(df_virginica["sepal_width"].mean(), 3)
-virg_petal_length_mean = round(df_virginica["petal_length"].mean(), 3)
-virg_petal_width_mean = round(df_virginica["petal_width"].mean(), 3)
-'''

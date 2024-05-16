@@ -88,3 +88,9 @@ save_iris_pairplot(df)
 species_pairplot_to_folder(df_setosa, "Setosa")               # Relationship of variables in Iris Setosa.
 species_pairplot_to_folder(df_versicolor, "Versicolor")       # Relationship of variables in Iris Versicolor.
 species_pairplot_to_folder(df_virginica, "Virginica")         # Relationship of variables in Iris Virginica.
+
+
+iris_petals(df)
+
+save_iris_scatterplot(df, 'petal_length', 'petal_width', "Iris Petals", "./IrisGraphs/", "IrisPetals.png")
+save_iris_scatterplot(df, 'sepal_length', 'sepal_width', "Iris Sepals", "./IrisGraphs/", "IrisSepals.png")
