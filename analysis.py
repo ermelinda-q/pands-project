@@ -100,12 +100,12 @@ sns.pairplot(df, hue='species', height=1.5)
 plt.suptitle("Relationship between Iris dataset variables", fontsize=10)
 plt.savefig("./IrisGraphs/DatasetVariables.png")
 plt.close()
-print("Pairplot of Iris DataSet variables successfully save in ./IrisGraphs/ directory.")
+print("Pairplot of Iris DataSet variables successfully saved in ./IrisGraphs/ directory.")
 
 # Calling species_pairplot_to_file function from analysisFunctions file
-species_pairplot_to_file(df_setosa, "Setosa")               # Relationship of variables in Iris Setosa.
-species_pairplot_to_file(df_versicolor, "Versicolor")       # Relationship of variables in Iris Versicolor.
-species_pairplot_to_file(df_virginica, "Virginica")         # Relationship of variables in Iris Virginica.
+species_pairplot_to_folder(df_setosa, "Setosa")               # Relationship of variables in Iris Setosa.
+species_pairplot_to_folder(df_versicolor, "Versicolor")       # Relationship of variables in Iris Versicolor.
+species_pairplot_to_folder(df_virginica, "Virginica")         # Relationship of variables in Iris Virginica.
 
 
 # Relationship of petal_length and petal_width, all three species.

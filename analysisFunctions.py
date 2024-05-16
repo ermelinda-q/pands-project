@@ -2,6 +2,7 @@
 import seaborn as sns 
 import matplotlib.pyplot as plt 
 import numpy as np 
+import os
 
 def create_empty_file(my_file):
     # Open the file in 'write' mode ('w'). If the file doesn't exist, it will be created.
@@ -21,7 +22,7 @@ def create_empty_file(my_file):
 
 # Function to generate and save pairplot for a given species.
 # df = DataFrame, species = name of species as string, save_dir = Directory to save the plots.
-def species_pairplot_to_file(df, species_name, save_dir="./IrisGraphs/"):
+def species_pairplot_to_folder(df, species_name, save_dir="./IrisGraphs/"):
     try:
         sns.pairplot(df, height=1.5)                         # Create pairplot for the given species.
         plt.suptitle(f"Iris {species_name} variables")       # Set title for the pairplot.
@@ -32,6 +33,53 @@ def species_pairplot_to_file(df, species_name, save_dir="./IrisGraphs/"):
     except Exception as e:
         print("Error generating pairplot:", str(e))
         
+        
+
+####
+####
+
+def create_iris_histograms(df):
+    try:
+        # Create a 2x2 grid of subplots
+        fig1, axes = plt.subplots(2, 2, figsize=(12, 12))
+
+        # Plot histograms for each feature with hue based on species
+        sns.histplot(data=df, x="sepal_length", hue="species", ax=axes[0, 0]).set_title("Sepal Length")
+        sns.histplot(data=df, x="sepal_width", hue="species", ax=axes[0, 1]).set_title("Sepal Width")
+        sns.histplot(data=df, x="petal_length", hue="species", ax=axes[1, 0]).set_title("Petal Length")
+        sns.histplot(data=df, x="petal_width", hue="species", ax=axes[1, 1]).set_title("Petal Width")
+
+        # Set the main title for the figure
+        plt.suptitle("Histogram of Iris flowers")
+
+        # Save the figure to a file
+        plt.savefig("./IrisGraphs/VariablesHistogram.png")
+        print("Histogram of Iris DataSet successfully saved as VariablesHistogram in ./IrisGraphs/ directory.")
+    except Exception as e:
+        print("Error generating histogram:", str(e))
+        
+
+
+def save_iris_pairplot(df, save_dir="./IrisGraphs/", filename="PairPlotOfVariables.png"):
+    # Ensure the save directory exists
+    os.makedirs(save_dir, exist_ok=True)
+    try:
+        # Create the pairplot
+        sns.pairplot(df, hue='species', height=1.5)
+        
+        # Add a title
+        plt.suptitle("Relationship between Iris dataset variables", fontsize=10)
+        
+        # Save the plot to the specified directory
+        filepath = os.path.join(save_dir, filename)
+        plt.savefig(filepath)
+        
+        # Close the plot to free up memory
+        plt.close()
+        
+        print(f"Pairplot of Iris DataSet variables successfully saved as {filename} in {save_dir} directory.")
+    except Exception as e:
+        print(f"An error occurred while creating or saving the pairplot: {e}")
 
 
 
