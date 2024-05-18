@@ -35,7 +35,7 @@ def main():
     
     while True:
         print("\n*** Iris Dataset Main Menu ***")
-        print("1. Display a description of Dataset using skim command")
+        print("1. Display a description of Dataset using Skimpy")
         print("2. Generate a text file with information about Dataset")
         print("3. Generate Histogram of all Variables")
         print("4. Generate Pairplots of all Variables")
@@ -46,6 +46,7 @@ def main():
         user_choice = input("Enter your choice: ")
         
         if user_choice == '1':
+            print("\nIris Dataset Summary using Skimpy package")
             skim(df)
         elif user_choice == '2':
             # Creating 'analysis.txt' file and calling the function create_empty_file to start writing in the file.
