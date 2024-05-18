@@ -91,9 +91,7 @@ plt.suptitle("Histogram of Iris flowers")
 plt.savefig("./IrisGraphs/VariablesHistogram.png")
 print("Histogram of Iris DataSet successfully saved in ./IrisGraphs/ directory.")
 
-#################################################################################
-####################               Pairplot                 #####################
-#################################################################################
+
 
 # Relationship of our variables on the dataset.
 sns.pairplot(df, hue='species', height=1.5)
