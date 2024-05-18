@@ -14,8 +14,8 @@ import pandas as pd
 import numpy as np 
 import matplotlib.pyplot as plt 
 import seaborn as sns 
-# Pearson's correlation coefficient.
-from scipy.stats import pearsonr
+from skimpy import skim                     # Generating quick summaries.
+from scipy.stats import pearsonr            # Pearson's correlation coefficient.
 from analysisFunctions import *
 import warnings
 warnings.filterwarnings("ignore", message="The figure layout has changed to tight")
@@ -46,7 +46,7 @@ def main():
         user_choice = input("Enter your choice: ")
         
         if user_choice == '1':
-            print("my message")
+            skim(df)
         elif user_choice == '2':
             # Creating 'analysis.txt' file and calling the function create_empty_file to start writing in the file.
             my_file = "analysis.txt"  
