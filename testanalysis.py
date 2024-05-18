@@ -16,7 +16,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns 
 from skimpy import skim                     # Generating quick summaries.
 from scipy.stats import pearsonr            # Pearson's correlation coefficient.
-from analysisFunctions import *
+from analysisFunctions import *             # Functions created to use running this program.
+from bestFitLineMenu import *               # Best Fit Line function and submenu.
 import warnings
 warnings.filterwarnings("ignore", message="The figure layout has changed to tight")
 
@@ -95,12 +96,7 @@ def main():
             plot_iris_petal_or_sepal(df, 'petal_length', 'petal_width', "Iris Petals", "./IrisGraphs/", "IrisPetals.png")
             plot_iris_petal_or_sepal(df, 'sepal_length', 'sepal_width', "Iris Sepals", "./IrisGraphs/", "IrisSepals.png")
         elif user_choice == '7':
-            df_petal_length = df["petal_length"].to_numpy()
-            df_petal_width = df["petal_width"].to_numpy()
-            df_sepal_length = df["sepal_length"].to_numpy()
-            df_sepal_width = df["sepal_width"].to_numpy()
-            best_fit_line(df_petal_length, df_petal_width, plot_title="Best Fit Line: Petal length v Petal width", x_label="Petal Length", y_label="Petal Width")
-            best_fit_line(df_sepal_length, df_sepal_width, plot_title="Best Fit Line: Sepal length v Sepal width", x_label="Sepal length", y_label="Sepal width" )
+            best_fit_line_menu()
         elif user_choice == '8':
             print("Exiting the program.")
             break

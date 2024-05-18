@@ -27,8 +27,7 @@ def create_empty_file(my_file):
         print(f"File '{my_file}' successfully created.")            # message that file is created.
     except Exception as e:
         print("Error saving information to file:", str(e))          # print error message.
- 
-       
+        
 ################################################################################
 ####################           Histogram Function           ####################
 ################################################################################
@@ -119,40 +118,6 @@ def plot_iris_petal_or_sepal(df, x_var, y_var, plot_title, save_dir="./IrisGraph
     except Exception as e:
         print(f"An error occurred while creating or saving the scatter plot: {e}")                      # Print error message.
         
-
-def best_fit_line(x_var, y_var, plot_title, save_dir="IrisGraphs/", x_label="X-axis", y_label="Y-axis"):
-    os.makedirs(save_dir, exist_ok=True)  # Check the directory exists, if not create it.
-    
-    try:
-        # Fit a straight line between x and y.
-        m, c = np.polyfit(x_var, y_var, 1)
-        
-        # Create a new figure and set of axis.
-        fig, ax = plt.subplots()
-
-        # Assign x and y to the plot.
-        ax.plot(x_var, y_var, 'x', label='Data points')
-
-        # Use the formula for Best Fit Line with my variables.
-        ax.plot(x_var, m * x_var + c, 'r-', label='Best fit line')
-
-        # Axis labels.
-        ax.set_xlabel(x_label)
-        ax.set_ylabel(y_label)
-
-        # Title.
-        ax.set_title(plot_title)
-        ax.legend()
-        filename = f"{x_label} vs {y_label}.png"
-        # Set the filepath where to save the file.
-        filepath = os.path.join(save_dir, filename)
-        plt.savefig(filepath)  # Save the plot to the specified directory.
-        plt.close()  # Close the plot to free up memory.
-
-        print(f"Scatter plot of {x_label} vs {y_label} successfully saved in {filepath}")  # Print output message with info about the file.
-    except Exception as e:
-        print(f"An error occurred while creating or saving the scatter plot: {e}")  # Print error message.
-
 
         
         
