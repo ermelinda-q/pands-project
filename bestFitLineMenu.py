@@ -71,6 +71,6 @@ def best_fit_line_menu():
         elif choice == '8':
             print("Returning to Main Menu.")
         else:
-            print("Invalid choice. Please enter a number between 1 and 7.")
+            print("Invalid choice. Please enter a number between 1 and 8.")
     except Exception as e:
         print("Error calculating correlation:", str(e))
