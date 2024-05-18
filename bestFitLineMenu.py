@@ -37,6 +37,7 @@ def best_fit_line(x_var, y_var, plot_title, save_dir="IrisGraphs/BestFitLine/", 
         
 def best_fit_line_menu():
     try:
+        # Display submenu.
         print("\n*** Best Fit LIne - Choose the pair of Variables You want to compare.***")
         print("1. Sepal Length vs Sepal Width")
         print("2. Sepal Length vs Petal Length")
@@ -47,8 +48,8 @@ def best_fit_line_menu():
         print("7. Generate all of above Best Fit Lines")
         print("8. Return to Main Menu")
 
-        choice = input("Enter your choice: ")
-
+        choice = input("Enter your choice: ")               # Choice is a user input.
+        # Based on user input we call the function above with the variables we want to compare and build the best fit line.
         if choice == '1':
             best_fit_line(df['sepal_length'], df['sepal_width'], plot_title="Best Fit Line: Sepal Length - Sepal Width", save_dir="IrisGraphs/BestFitLine/", x_label="Sepal Length", y_label="Sepal Width")
         elif choice == '2':

@@ -1,4 +1,6 @@
 # This file contains functions for main file analysis.txt
+# Author: Ermelinda Qejvani
+
 import numpy as np 
 import seaborn as sns 
 import matplotlib.pyplot as plt 
