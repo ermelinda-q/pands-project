@@ -101,7 +101,7 @@ def main():
             print("Exiting the program.")
             break
         else:
-            print("Invalid choice. Please enter a number between 1 and 5.")
+            print("Invalid choice. Please enter a number between 1 and 8.")
 
 if __name__ == "__main__":
     main()
