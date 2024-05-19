@@ -17,7 +17,8 @@ import seaborn as sns
 from skimpy import skim                     # Generating quick summaries.
 from scipy.stats import pearsonr            # Pearson's correlation coefficient.
 from analysisFunctions import *             # Functions created to use running this program.
-from bestFitLineMenu import *               # Best Fit Line function and submenu.
+from bestFitLineMenu import *               # Best Fit Line function and submenu.   
+from correlation import *                   # Correlation function and submenu.
 import warnings
 warnings.filterwarnings("ignore", message="The figure layout has changed to tight")
 
@@ -42,8 +43,9 @@ def main():
         print("4. Generate Pairplots of all Variables")
         print("5. Generate Pairplots for Variables of each Species")
         print("6. Generate Scatterplots for Petals and Sepals of each Species")
-        print("7. Generate Best Fit Line for Petals and Sepals of each Species")
-        print("8. Exit")
+        print("7. Generate Best Fit Line of Variables(Submenu)")
+        print("8. Calculate and write to file Correlation between variables")
+        print("9. Exit")
         
         user_choice = input("Enter your choice: ")
         
@@ -98,10 +100,12 @@ def main():
         elif user_choice == '7':
             best_fit_line_menu()
         elif user_choice == '8':
+            write_correlations_to_file(df, 'correlation_results.txt')
+        elif user_choice == '9':
             print("Exiting the program.")
             break
         else:
-            print("Invalid choice. Please enter a number between 1 and 5.")
+            print("Invalid choice. Please enter a number between 1 and 9.")
 
 if __name__ == "__main__":
     main()

@@ -1,4 +1,4 @@
-# Best fit line Submenu and function will be used when user enters choice 7 from the main menu.
+# This file contains Best fit line Submenu and function that will be used when user enters choice 7 from the main menu.
 # Author: Ermelinda Qejvani.
 import os 
 import matplotlib.pyplot as plt 
