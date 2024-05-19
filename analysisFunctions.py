@@ -58,7 +58,7 @@ def create_iris_histograms(df, save_dir="./IrisGraphs/"):                       
 ####################           Pairplots Functions          #####################
 #################################################################################
 
-# Function 1 to generate and save pairplot for a given species.
+# Function 1 to generate and save pairplot of variables for a given species.
 # df = DataFrame, species = name of species as string, save_dir = Directory to save the plots.
 def species_pairplot_to_folder(df, species_name, save_dir="./IrisGraphs/"):
     os.makedirs(save_dir, exist_ok=True)                              # Check the directory exists, if not create it.
