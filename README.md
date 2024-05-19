@@ -106,9 +106,9 @@ To make it easier to understand, I added a menu so users can easily navigate and
         - 4 of columns are float64(numerical values holding variables' data) and one string(holding species name).
         - The column names(variable names) numerical and string are displayed in different tables.
         - There are no null values(empty fields) in this dataset.
-        - From the numerical data we can find the mean, standard deviation(std), minimum and maximum values and also with percentages(under 25%, 50%, 75%)
+        - From the numerical data we can find the mean, standard deviation(std), minimum and maximum values and also percentiles (under 25%, 50%, 75%)
         - It is also displayed a small histogram of variables.
-        
+
     Exploring this table will help us to decide what commands we can use for the next choice.
 
 2. Generate a text file with about Dataset.
