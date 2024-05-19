@@ -69,7 +69,7 @@ To run the files stored in this repository you will need to download and install
 To make a copy of this repository in your computer/local machine run the following command:
 
 ```
-git clone https://github.com/ermelinda-q/pands-weekly-tasks.git
+git clone https://github.com/ermelinda-q/pands-project.git
 ```
 ***
 ## Python program description
