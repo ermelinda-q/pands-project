@@ -22,7 +22,7 @@ _Files and Folders in this repository:_
 
 _Files:_
 
-- analysis.py - main file to run the program.
+- $analysis.py$ - main file to run the program.
 - analysisFunctions.py - storing the following functions:
     - create_empty_file: creates analysis.txt file.
     - create_iris_histograms: generates VariablesHistogram.png to folder IrisGraphs.
@@ -51,8 +51,6 @@ _Folders:_
 ## About this project
 
 This project is a study about Iris flower data set, or Fisher's Iris data set - a collection of measurements taken from three species of Iris flowers. Ronald Fisher, a British statistician and biologist, introduced this data set in 1936 to demonstrate linear discriminant analysis. Edgar Anderson collected the data to study the morphological differences among the Iris species. Each species has 50 samples, and four measurements—sepal length, sepal width, petal length, and petal width—were recorded for each sample. Fisher used these measurements to create a model that can distinguish between the different Iris species. His work was published in the _Annals of Eugenics_, now known as the _Annals of Human Genetics_. [Source: Wikipedia](https://en.wikipedia.org/wiki/Iris_flower_data_set)
-
-
 
 
 ## Use of this project
