@@ -168,15 +168,14 @@ To make it easier to understand, I added a menu so users can easily navigate and
 ***
 ## References:
 
-    - [Sorting Arrays in Python](https://jakevdp.github.io/PythonDataScienceHandbook/02.08-sorting.html).
-
-    - [Plotting with matplot library](https://jakevdp.github.io/PythonDataScienceHandbook/04.00-introduction-to-matplotlib.html).
-    - [Saving figures to file](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html).
-    - [Intro to matplotlib](https://jakevdp.github.io/PythonDataScienceHandbook/04.00-introduction-to-matplotlib.html).
-    - [Scatter plots](https://jakevdp.github.io/PythonDataScienceHandbook/04.02-simple-scatter-plots.html).
-    - [Histograms](https://jakevdp.github.io/PythonDataScienceHandbook/04.05-histograms-and-binnings.html).
-    - [Seaborn](https://jakevdp.github.io/PythonDataScienceHandbook/04.14-visualization-with-seaborn.html).
-    - [Machine Learning](https://jakevdp.github.io/PythonDataScienceHandbook/05.01-what-is-machine-learning.html).
+- [Sorting Arrays in Python](https://jakevdp.github.io/PythonDataScienceHandbook/02.08-sorting.html).
+- [Plotting with matplot library](https://jakevdp.github.io/PythonDataScienceHandbook/04.00-introduction-to-matplotlib.html).
+- [Saving figures to file](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html).
+- [Intro to matplotlib](https://jakevdp.github.io/PythonDataScienceHandbook/04.00-introduction-to-matplotlib.html).
+- [Scatter plots](https://jakevdp.github.io/PythonDataScienceHandbook/04.02-simple-scatter-plots.html).
+- [Histograms](https://jakevdp.github.io/PythonDataScienceHandbook/04.05-histograms-and-binnings.html).
+- [Seaborn](https://jakevdp.github.io/PythonDataScienceHandbook/04.14-visualization-with-seaborn.html).
+- [Machine Learning](https://jakevdp.github.io/PythonDataScienceHandbook/05.01-what-is-machine-learning.html).
 
 ## Get Help
 
