@@ -101,13 +101,14 @@ To make it easier to understand, I added a menu so users can easily navigate and
 
     ![Skim Summary](./images/skim.png)
 
-    As you can see from the above output the dataset has:
+    - As you can see from the above output the dataset has:
         - 150 rows and 5 columns.
         - 4 of columns are float64(numerical values holding variables' data) and one string(holding species name).
         - The column names(variable names) numerical and string are displayed in different tables.
         - There are no null values(empty fields) in this dataset.
         - From the numerical data we can find the mean, standard deviation(std), minimum and maximum values and also with percentages(under 25%, 50%, 75%)
         - It is also displayed a small histogram of variables.
+        
     Exploring this table will help us to decide what commands we can use for the next choice.
 
 2. Generate a text file with about Dataset.
@@ -128,7 +129,7 @@ To make it easier to understand, I added a menu so users can easily navigate and
     This option calls another function that generates a pairplot graph of variables, but this time in the function the species name is given as a parameter. 
     
     One of graphs generated:
-    
+
     ![Iris Setosa Variables](./IrisGraphs/IrisSetosaVariables.png).
 
 
