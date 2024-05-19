@@ -157,45 +157,26 @@ To make it easier to understand, I added a menu so users can easily navigate and
 
     ![Petal length & width - Best Fit Line](./IrisGraphs/BestFitLine/Petal%20Length%20vs%20Petal%20Width.png).
 
+8. Calculate and write to file Correlation between variables.
 
-    
-List of possible extra commands I can use for variable's summary (analysis.txt):
-1. Adding a menu.
+    This option calls functions from correlation.py file. One calculates correlation(calculate_correlation) of two values and the other one(write_correlation_to_file) creates sets of two variables, the numerical ones, and stores them in a list named correlation_results. This second function(write_correlation_to_file) calls calculate_correlation function, stores all data and sorts it from the strongest to the weakest one. Information about correlation and all values generated from functions are stored in [correlation_results.txt](./correlation_results.txt).
 
-2. Sorting the array of each variable????
-    - numpy:
-    def bogosort(x):
-    while np.any(x[:-1] > x[1:]):
-        np.random.shuffle(x)
-    return x
-    x = np.array([2, 1, 4, 3, 5])
-    bogosort(x)
-    - or np.sort()
-    - https://jakevdp.github.io/PythonDataScienceHandbook/02.08-sorting.html
+9. Exit the program.
 
-List of possible commands for plotting (pyplot):
+    This option breaks the loop in main menu and ends the program.
 
-1. K-nearest neighbors:
-     - https://jakevdp.github.io/PythonDataScienceHandbook/02.08-sorting.html
-2. Plotting with matplot library:
-    - https://jakevdp.github.io/PythonDataScienceHandbook/04.00-introduction-to-matplotlib.html
-    - Saving figures to file:
-    fig.savefig('my_figure.png')
-    - To confirm that it contains what we think it contains, let's use the IPython Image object to display the contents of this file:
-    ' from IPython.display import Image
-    ' Image('my_figure.png')
-    https://jakevdp.github.io/PythonDataScienceHandbook/04.00-introduction-to-matplotlib.html
-    - scatter plots:
-    https://jakevdp.github.io/PythonDataScienceHandbook/04.02-simple-scatter-plots.html
-    - Histograms:
-    https://jakevdp.github.io/PythonDataScienceHandbook/04.05-histograms-and-binnings.html
-    - Seaborn:
-    https://jakevdp.github.io/PythonDataScienceHandbook/04.14-visualization-with-seaborn.html
-    - Machine Learning:
-    https://jakevdp.github.io/PythonDataScienceHandbook/05.01-what-is-machine-learning.html
-    https://jakevdp.github.io/PythonDataScienceHandbook/05.03-hyperparameters-and-model-validation.html
-    https://jakevdp.github.io/PythonDataScienceHandbook/05.06-linear-regression.html
-3. Save all .png files to a .pdf file????
+***
+## References:
+
+    - [Sorting Arrays in Python](https://jakevdp.github.io/PythonDataScienceHandbook/02.08-sorting.html).
+
+    - [Plotting with matplot library](https://jakevdp.github.io/PythonDataScienceHandbook/04.00-introduction-to-matplotlib.html).
+    - [Saving figures to file](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.savefig.html).
+    - [Intro to matplotlib](https://jakevdp.github.io/PythonDataScienceHandbook/04.00-introduction-to-matplotlib.html).
+    - [Scatter plots](https://jakevdp.github.io/PythonDataScienceHandbook/04.02-simple-scatter-plots.html).
+    - [Histograms](https://jakevdp.github.io/PythonDataScienceHandbook/04.05-histograms-and-binnings.html).
+    - [Seaborn](https://jakevdp.github.io/PythonDataScienceHandbook/04.14-visualization-with-seaborn.html).
+    - [Machine Learning](https://jakevdp.github.io/PythonDataScienceHandbook/05.01-what-is-machine-learning.html).
 
 ## Get Help
 
@@ -206,8 +187,3 @@ List of possible commands for plotting (pyplot):
 
 
 ## Author
-
-
-Iris data set file iris.csv uploaded from:
-https://raw.githubusercontent.com/mwaskom/seaborn-data/master/iris.csv
-
