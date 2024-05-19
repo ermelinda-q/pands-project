@@ -128,6 +128,7 @@ To make it easier to understand, I added a menu so users can easily navigate and
     This option calls another function that generates a pairplot graph of variables, but this time in the function the species name is given as a parameter. 
     
     One of graphs generated:
+    
     ![Iris Setosa Variables](./IrisGraphs/IrisSetosaVariables.png).
 
 
