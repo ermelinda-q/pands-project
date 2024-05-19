@@ -22,9 +22,9 @@ _Files and Folders in this repository:_
 
 _Files:_
 
-- ==analysis.py== - main file to run the program.
-- $analysisFunctions.py$ - storing the following functions:
-    - $create_empty_file$: creates analysis.txt file.
+- `analysis.py` - main file to run the program.
+- `analysisFunctions.py` - storing the following functions:
+    - `create_empty_file`: creates analysis.txt file.
     - $create_iris_histograms$: generates VariablesHistogram.png to folder IrisGraphs.
     - $species_pairplot_to_folder$: generates pairplot graph of relations between variables in a given iris flower, e.g. IrisSetosaVariables.png
     - $save_iris_pairplot$: generates a pairplot graph of all variables in the DataFrame.
