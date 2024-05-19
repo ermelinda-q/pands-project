@@ -93,7 +93,12 @@ To make it easier to understand, I added a menu so users can easily navigate and
 
 ![Main Menu](./images/main-menu.png)
 
+**Menu Choices**
 
+1. Display a description of Dataset using Skimpy.
+    The ouput of command skim(df) gives a detailed summary of dataset and the format is very easy to read and understand:
+
+    ![Skim Summary](./images/skim.png)
 
 
 
