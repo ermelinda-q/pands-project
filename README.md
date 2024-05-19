@@ -121,13 +121,13 @@ To make it easier to understand, I added a menu so users can easily navigate and
     Choosing this option a histogram of all numerical variables is created and saved in ./IrisGraphs/VariablesHistogram.png.
     In this histogram each of species is differentiated by assigning a different colour using 'hue='species' parameter in the function created.
 
-    ![Variables Histogram](./IrisGraphs/VariablesHistogram.png)
+    ![Variables Histogram](./images/VariablesHistogram.png)
 
 4. Generate Pairplots of all Variables.
 
     Another useful option in Python which provides a quick visual overview of relationship of variables in our dataset. In this way we can easily identify patterns of correlation if present. 
 
-    ![Pairplot of Variables](./IrisGraphs/PairPlotOfVariables.png).
+    ![Pairplot of Variables](./images/PairPlotOfVariables.png).
 
 5. Generate Pairplots for Variables of each Species.
 
@@ -135,7 +135,15 @@ To make it easier to understand, I added a menu so users can easily navigate and
     
     One of graphs generated:
 
-    ![Iris Setosa Variables](./IrisGraphs/IrisSetosaVariables.png).
+    ![Iris Setosa Variables](./images/IrisSetosaVariables.png).
+
+6. Generate Scatterplots for Petals and Sepals of each species.
+
+    This options calls a function that generates a pairplot graph of variables belonging to the same part of the flower, petals (width v length) and sepals(width v length). A different colour is assigned for each of species making it easer to read and see if there is connection between the variables compared.
+
+    ![Iris Petals Graph](./images/IrisPetals.png). ![Iris Sepals Graph](./images/IrisSepals.png)
+
+    
 
 
 
