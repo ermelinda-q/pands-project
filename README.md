@@ -75,7 +75,7 @@ git clone https://github.com/ermelinda-q/pands-project.git
 ## Python program description
 
 I created this program to show fifth-year computer science class at our school how Python can analyze data from .csv files. To make it easier to understand, I added a menu so users can easily navigate and learn how everything works.
-![Main Menu[(./images/main-menu.jpg)]]
+![Main Menu](./images/main-menu.jpg)
 
 
 
