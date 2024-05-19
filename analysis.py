@@ -45,7 +45,7 @@ def main():
         print("6. Generate Scatterplots for Petals and Sepals of each Species")
         print("7. Generate Best Fit Line of Variables(Submenu)")
         print("8. Calculate and write to file Correlation between variables")
-        print("9. Exit")
+        print("9. Exit the program")
         
         user_choice = input("Enter your choice: ")
         
@@ -87,25 +87,26 @@ def main():
                 file.write("\n\nSummary of Iris Versicolor:\n---------------------------\n" +df_versicolor.describe(include="all").to_string())
                 file.write("\n\nSummary of Iris Virginica:\n--------------------------\n" + df_virginica.describe(include="all").to_string())
         elif user_choice == '3':
-            create_iris_histograms(df)
+            create_iris_histograms(df)                                   # Calling function from analysisFunctions file to created a histogram.
         elif user_choice == '4':
-            save_iris_pairplot(df)
+            save_iris_pairplot(df)                                        # function to create a pairplot graph of all variables in dataset.
         elif user_choice == '5':
             species_pairplot_to_folder(df_setosa, "Setosa")               # Relationship of variables in Iris Setosa.
             species_pairplot_to_folder(df_versicolor, "Versicolor")       # Relationship of variables in Iris Versicolor.
             species_pairplot_to_folder(df_virginica, "Virginica")         # Relationship of variables in Iris Virginica.
         elif user_choice == '6':
+            # Pairplot to show relationship between variables petal_length and petal_width/sepal_length and sepal_width.
             plot_iris_petal_or_sepal(df, 'petal_length', 'petal_width', "Iris Petals", "./IrisGraphs/", "IrisPetals.png")
             plot_iris_petal_or_sepal(df, 'sepal_length', 'sepal_width', "Iris Sepals", "./IrisGraphs/", "IrisSepals.png")
         elif user_choice == '7':
-            best_fit_line_menu()
+            best_fit_line_menu()                                          # call function from bestFitLineMenu.py
         elif user_choice == '8':
-            write_correlations_to_file(df, 'correlation_results.txt')
+            write_correlations_to_file(df, 'correlation_results.txt')     # call functions in correlation.py file.
         elif user_choice == '9':
-            print("Exiting the program.")
+            print("Exiting the program.")                                 # Exit the program and end the program.
             break
         else:
-            print("Invalid choice. Please enter a number between 1 and 9.")
+            print("Invalid choice. Please enter a number between 1 and 9.") # Print error message.
 
 if __name__ == "__main__":
     main()
