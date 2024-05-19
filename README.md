@@ -143,10 +143,22 @@ To make it easier to understand, I added a menu so users can easily navigate and
 
     ![Iris Petals Graph](./images/IrisPetals.png). ![Iris Sepals Graph](./images/IrisSepals.png)
 
+    As we can see from the above graphs the is a stronger correlation between petal length and petal width, comparing to a weaker correlation between sepal length and sepal width.
+
+7. Generate Best Fit Line of Variables - Submenu.
+
+    With this option I wanted to show that using Python we can create more complex programs where a menu option can call another function which will show us another menu. This option creates also another subfolder inside the IrisGraph folder called BestFitLine. All graphs generated from this submenu will be stored there(BestFitLine folder).
+
+    ![Submenu for Best Fit Line](./images/submenu.png).
+
+    As you can see the user is presented with a menu to choose which variables they want to plot in a graph with added best fit line. For each given option a graph with the best fit line is saved in BestFitLine directory.
+
+    An example of graph plots with the best fit line:
+
+    ![Petal length & width - Best Fit Line](./IrisGraphs/BestFitLine/Petal%20Length%20vs%20Petal%20Width.png).
+
+
     
-
-
-
 List of possible extra commands I can use for variable's summary (analysis.txt):
 1. Adding a menu.
 
