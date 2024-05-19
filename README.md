@@ -22,7 +22,7 @@ _Files and Folders in this repository:_
 
 _Files:_
 
-- <analysis.py> - main file to run the program.
+- *analysis.py* - main file to run the program.
 - $analysisFunctions.py$ - storing the following functions:
     - $create_empty_file$: creates analysis.txt file.
     - $create_iris_histograms$: generates VariablesHistogram.png to folder IrisGraphs.
