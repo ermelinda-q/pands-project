@@ -10,16 +10,16 @@
 # Author: Ermelinda Qejvani
 
 # First I'm importing all libraries that I can use to work/manipulate data files
-import pandas as pd 
-import numpy as np 
-import matplotlib.pyplot as plt 
-import seaborn as sns 
+import pandas as pd                         # Data Frame.
+import numpy as np                          # Numerical arrays.
+import matplotlib.pyplot as plt             # Plotting.
+import seaborn as sns                       # Subplotting.
 from skimpy import skim                     # Generating quick summaries.
 from scipy.stats import pearsonr            # Pearson's correlation coefficient.
 from analysisFunctions import *             # Functions created to use running this program.
 from bestFitLineMenu import *               # Best Fit Line function and submenu.   
 from correlation import *                   # Correlation function and submenu.
-import warnings
+import warnings                             # importing warning to deal with warning messages.
 warnings.filterwarnings("ignore", message="The figure layout has changed to tight")
 
 # Start the program.

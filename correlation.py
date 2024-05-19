@@ -6,7 +6,7 @@
 # Author: Ermelinda Qejvani
 
 import pandas as pd
-from scipy.stats import pearsonr
+from scipy.stats import pearsonr                # Calculating Pearson correlation.
 
 df = pd.read_csv("iris.csv") 
 

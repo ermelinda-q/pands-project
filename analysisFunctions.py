@@ -1,11 +1,11 @@
 # This file contains functions for main file analysis.txt
 # Author: Ermelinda Qejvani
 
-import numpy as np 
+import numpy as np                  
 import seaborn as sns 
 import matplotlib.pyplot as plt 
 import numpy as np 
-import os
+import os                               # Working with file and folder paths.
 
 ################################################################################
 ####################        Text file function              ####################

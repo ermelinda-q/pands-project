@@ -74,7 +74,23 @@ git clone https://github.com/ermelinda-q/pands-project.git
 ***
 ## Python program description
 
-I created this program to show fifth-year computer science class at our school how Python can analyze data from .csv files. To make it easier to understand, I added a menu so users can easily navigate and learn how everything works.
+I created this program to show fifth-year computer science class at our school how Python can analyze data from .csv files. 
+
+The Python libraries I used in this program are:
+- `import pandas as pd`                       # Data Frame.
+- `import numpy as np`                        # Numerical arrays.
+- `import matplotlib.pyplot as plt`           # Plotting.
+- `import seaborn as sns`                     # Subplotting.
+- `from skimpy import skim`                   # Generating quick summaries.
+- `from scipy.stats import pearsonr`          # Pearson's correlation coefficient.
+- `from analysisFunctions import *`           # Functions created to use running this program.
+- `from bestFitLineMenu import *`             # Best Fit Line function and submenu.   
+- `from correlation import *`                 # Correlation function and submenu.
+- `import os`                                 # Working with file and folder paths.
+- `import warnings`                           # importing warning to deal with warning messages.
+
+To make it easier to understand, I added a menu so users can easily navigate and learn how everything works.
+
 ![Main Menu](./images/main-menu.png)
 
 
