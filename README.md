@@ -125,7 +125,10 @@ To make it easier to understand, I added a menu so users can easily navigate and
     ![Pairplot of Variables](./IrisGraphs/PairPlotOfVariables.png).
 
 5. Generate Pairplots for Variables of each Species.
-    This option calls another function that generates a pairplot graph of variables, but this time in the function the species name is given as a parameter. This is a way to show that we can further explore the dataset by giving specific instructions for a dipper analyze of its data.
+    This option calls another function that generates a pairplot graph of variables, but this time in the function the species name is given as a parameter. 
+    
+    One of graphs generated:
+    ![Iris Setosa Variables](./IrisGraphs/IrisSetosaVariables.png).
 
 
 
